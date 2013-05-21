@@ -140,7 +140,7 @@ int permute_num(struct phone_state *state,
 
 		/* Update the current letter */
 		cur_num = digit_to_alpha[cur_num - '2'] + current;
-		state->current_perm[cur_idx] = 'A' + cur_num;
+		state->current_perm[cur_idx] = (char)('A' + cur_num);
 	}
 
 	/* Check for wrap-around (signifies the end of the sequence) */

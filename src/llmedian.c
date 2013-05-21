@@ -89,7 +89,7 @@ char *random_nchar_string(int n)
 		return NULL;
 	}
 
-	for (i=0;i<n;i++) *(s + i) = 'A' + rand() % 25;
+	for (i=0;i<n;i++) *(s + i) = (char)('A' + rand() % 25);
 	return s;
 }
 
@@ -164,7 +164,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* Seed the PRNG */
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 
 	/* Build the list */
 	len = atoi(argv[1]);

@@ -12,7 +12,7 @@ clean:
 
 bin/%.c:
 	@echo "Building $*..."
-	@$(CC) $(CFLAGS) -o bin/$* src/$*.c
+	@$(CC) $(CFLAGS) -o bin/$* src/$*.c > build.log 2>&1
 
 
 # vi:set ts=4 sw=4:

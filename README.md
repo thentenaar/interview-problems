@@ -7,9 +7,10 @@ posted here just for the hell of it.
 Presentation Format
 ===================
 
-The examples are written in 'ANSI' C (C89), and designed to be compiled with GCC. However, they
-should compile with any compatible compiler. A Makefile is provided for convenience. Simply invoke
-the almighty ``make`` to build all examples.
+The examples are written in 'ANSI' C (C89), and designed to be compiled with any compatible compiler.
+Makefiles are provided for convenience. Simply invoke the almighty ``make`` to build all examples.
+
+For Turbo C / QuickC, see Makefile.tcc / Makefile.qc, respectively.
 
 Why C?
 ======
@@ -17,6 +18,18 @@ Why C?
 Because it's the industry standard programming language (thank God it **ain't** Java!)
 and thus, in this humble author's opinion, the ideal medium in which to publish these
 sorts of solutions.
+
+Compiler / libc Compatiblity
+=====================
+
+These examples have been tested, and are working, with the following compilers/OSses.
+
+| Compiler               | C Library   | OS     | Arch    | Warnings | Errors |
+| ---------------------- | ----------- | ------ | --------| -------- | ------ |
+| GCC 4.6.3              | glibc 2.15  | Linux  | x86-64  |    0     |   0    |
+| GCC 4.6.1              | eglibc 2.13 | Linux  | x86-64  |    0     |   0    |
+| Borland Turbo C 2.0    | (bundled)   | Dosbox | x86-16  |    0     |   0    |
+| Microsoft QuickC 2.00  | (bundled)   | Dosbox | x86-16  |    0     |   0    |
 
 atoi.c
 ======
@@ -37,7 +50,7 @@ _Write a program to find the median node of a linked-list._
 I present a simple O(n) solution to this problem. If you understand what a linked-list is,
 and how it works, this is pretty painless.
 
-phone-words.c
+phone.c
 =============
 
 _Given a 7-digit American telephone number, print out all possible combinations of letters
