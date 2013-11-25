@@ -33,6 +33,7 @@ CFLAGS=-AS -W3 -Za -Zp -Gs -Ox -DNDEBUG -I$(INCLUDE)
 
 TARGETS=\
 	src\atoi.exe     \
+	src\calc.exe     \
 	src\llmedian.exe \
 	src\phone.exe    \
 	src\rand.exe     \

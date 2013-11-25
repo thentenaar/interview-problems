@@ -26,6 +26,7 @@ CFLAGS=-A -G -O -Z -f- -r -mt -w -w-pia -nbin
 
 TARGETS=\
 	src\atoi.exe     \
+	src\calc.exe     \
 	src\llmedian.exe \
 	src\phone.exe    \
 	src\rand.exe     \

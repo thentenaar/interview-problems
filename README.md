@@ -26,6 +26,7 @@ These examples have been tested, and are working, with the following compilers/O
 
 | Compiler               | C Library   | OS     | Arch    | Warnings | Errors |
 | ---------------------- | ----------- | ------ | --------| -------- | ------ |
+| GCC 4.7.3              | glibc 2.15  | Linux  | x86-64  |    0     |   0    |
 | GCC 4.6.3              | glibc 2.15  | Linux  | x86-64  |    0     |   0    |
 | GCC 4.6.1              | eglibc 2.13 | Linux  | x86-64  |    0     |   0    |
 | Borland Turbo C 2.0    | (bundled)   | Dosbox | x86-16  |    0     |   0    |
@@ -41,6 +42,27 @@ _digit * radix ^ position_ (e.g. 100 = 1 * 10^2).
 
 Note that the functions presented here don't heed a sign prefixing a number, whereas the
 glibc implementation of atoi will handle signs at least.
+
+calc.c
+======
+
+_Write a program to solve an infix arithmetic expression. The expression may contain parenthesis,
+positive and/or negative integers, parenthesis, and the following operators:_
+
+_addition, subtraction, multiplication, division, and exponentation._
+
+_Example: 3 + 4 * 2 / (1 - 5) ^ 2 ^ 3 / 1_
+
+_Answer: 3_
+
+_Note: Keep in mind the order of operations._
+
+I present a simple O(n) solution for converting the infix expression to postfix notation (on a stack)
+based on [Dijkstra's Shunting-Yard Algorithm](http://en.wikipedia.org/wiki/Shunting-yard_algorithm).
+
+Then, follow that up with a simple O(n) postfix expression solver. My example also keeps track of
+operator precendence and associativity, and contains more operators than specified in the problem
+statement.
 
 llmedian.c
 ==========
