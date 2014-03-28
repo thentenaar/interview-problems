@@ -11,6 +11,7 @@ The examples are written in 'ANSI' C (C89), and designed to be compiled with any
 Makefiles are provided for convenience. Simply invoke the almighty ``make`` to build all examples.
 
 For Turbo C / QuickC, see Makefile.tcc / Makefile.qc, respectively.
+For SCO OpenServer, see Makefile.sco.
 
 Why C?
 ======
@@ -24,13 +25,14 @@ Compiler / libc Compatiblity
 
 These examples have been tested, and are working, with the following compilers/OSses.
 
-| Compiler               | C Library   | OS     | Arch    | Warnings | Errors |
-| ---------------------- | ----------- | ------ | --------| -------- | ------ |
-| GCC 4.7.3              | glibc 2.15  | Linux  | x86-64  |    0     |   0    |
-| GCC 4.6.3              | glibc 2.15  | Linux  | x86-64  |    0     |   0    |
-| GCC 4.6.1              | eglibc 2.13 | Linux  | x86-64  |    0     |   0    |
-| Borland Turbo C 2.0    | (bundled)   | Dosbox | x86-16  |    0     |   0    |
-| Microsoft QuickC 2.00  | (bundled)   | Dosbox | x86-16  |    0     |   0    |
+| Compiler               | C Library   | OS       | Arch    | Warnings | Errors |
+| ---------------------- | ----------- | -------- | --------| -------- | ------ |
+| GCC 4.7.3              | glibc 2.15  | Linux    | x86-64  |    0     |   0    |
+| GCC 4.6.3              | glibc 2.15  | Linux    | x86-64  |    0     |   0    |
+| GCC 4.6.1              | eglibc 2.13 | Linux    | x86-64  |    0     |   0    |
+| Borland Turbo C 2.0    | (bundled)   | Dosbox   | x86-16  |    0     |   0    |
+| Microsoft QuickC 2.00  | (bundled)   | Dosbox   | x86-16  |    0     |   0    |
+| SCO Dev. System 5.2.0A | libc 5.2.0A | SCO Unix | x86-32  |    0     |   0    |
 
 atoi.c
 ======
