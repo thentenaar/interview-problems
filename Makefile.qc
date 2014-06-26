@@ -32,6 +32,7 @@ LIB=C:\QC2\LIB
 CFLAGS=-AS -W3 -Za -Zp -Gs -Ox -DNDEBUG -I$(INCLUDE)
 
 TARGETS=\
+	src\8queens.exe  \
 	src\atoi.exe     \
 	src\calc.exe     \
 	src\llmedian.exe \

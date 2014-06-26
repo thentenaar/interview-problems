@@ -25,6 +25,7 @@ RM=del
 CFLAGS=-A -G -O -Z -f- -r -mt -w -w-pia -nbin
 
 TARGETS=\
+	src\8queens.exe  \
 	src\atoi.exe     \
 	src\calc.exe     \
 	src\llmedian.exe \
