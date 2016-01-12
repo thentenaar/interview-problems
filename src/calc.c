@@ -5,7 +5,7 @@
  * This code is licenced under the Simplified BSD License.
  * See the LICENSE file for details.
  *
- * Compiling: gcc -ansi -pedantic -Wall -O2 -o calc calc.c
+ * Compiling: gcc -ansi -pedantic -Wall -W -O2 -o calc calc.c
  *
  * Running:
  *     tim@cid ~ $ ./calc "1 + 2"
@@ -168,7 +168,7 @@ struct op operators[] = {
  */
 struct op *get_operator(char c)
 {
-	int i;
+	unsigned int i;
 	for (i=0;i<sizeof(operators)/sizeof(operators[0]);i++)
 		if (c == operators[i].op) return &operators[i];
 	return NULL;
@@ -445,7 +445,7 @@ void reduce_op(int *i, struct stack *pfs, struct op *op)
 		memmove(&pfs->data[*i],
 		        &pfs->data[*i + 1],
 		        sizeof(long) * (pfs->pos - *i - 1));
-		pfs->pos--; *i--;
+		pfs->pos--; (*i)--;
 	} else {
 		pfs->data[*i - 2] = op->eval(op->op,
 		                             pfs->data[*i - 2],
@@ -474,7 +474,7 @@ long solve_postfix(struct stack *pf_stack)
 	}
 
 	/* Reduce all operators. */
-	for (i=0;i<pf_stack->pos;i++) {
+	for (i=0;i<(int)pf_stack->pos;i++) {
 		if (!(op = get_operator((char)(pf_stack->data[i]))))
 			continue;
 		reduce_op(&i, pf_stack, op);

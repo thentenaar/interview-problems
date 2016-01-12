@@ -1,0 +1,48 @@
+#
+# Makefile for Borland C 3.x
+#
+# To build, ensure Borland C's bin directory is in your path,
+# and run:
+#   make -f Makefile.bcc all
+#
+
+###############################################
+# CFLAGS:
+#
+# -O2    - Full Optimization
+# -A     - ANSI Keywords Only
+# -G     - Generate for speed
+# -j1    - Stop after one error
+# -g1    - Stop after one warning
+# -f-    - No floating point instructions
+# -d     - Merge duplicate strings
+# -ml    - Large memory model
+# -w-pia - Disable "possibly incorrect assginment" warnings
+#
+################################################
+CFLAGS = -O2 -A -G -j1 -g1 -f- -d -ml -Isrc -w-pia
+
+TARGETS=\
+	src\8queens.exe  \
+	src\atoi.exe     \
+	src\calc.exe     \
+	src\llmedian.exe \
+	src\phone.exe    \
+	src\rand.exe     \
+	src\strrev.exe   \
+	src\subarray.exe
+
+all: clean $(TARGETS)
+
+clean:
+	@del src\*.o*
+	@del bin\*.*
+
+.c.exe:
+	@echo "Building $<"
+	@tools\crlf $< $<x
+	@copy $<x $<
+	@del $<x
+	@$(CC) $(CFLAGS) -nsrc -c $<
+	@$(CC) $(CFLAGS) -ebin\$&.exe $<
+

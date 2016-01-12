@@ -5,7 +5,7 @@
  * This code is licenced under the Simplified BSD License.
  * See the LICENSE file for details.
  *
- * Compiling: gcc -ansi -pedantic -Wall -O2 -o rand rand.c
+ * Compiling: gcc -ansi -pedantic -Wall -W -O2 -o rand rand.c
  * Running:
  *     tim@cid ~ $ ./rand 0 32 6
  *     Generated: 15,6,4,27,12,22
@@ -58,7 +58,10 @@ int main(int argc, char *argv[])
 	printf("Generated: ");
 	for (i=0;i<seq_len;i++) {
 		printf((i < seq_len - 1) ? "%u," : "%u",
-		       my_rand(&seed, atoi(argv[1]), atoi(argv[2])));
+		       my_rand(&seed,
+		               (unsigned int)atoi(argv[1]),
+		               (unsigned int)atoi(argv[2]))
+		);
 	}
 	printf("\n");
 	return 0;

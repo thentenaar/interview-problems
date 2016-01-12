@@ -5,7 +5,7 @@
  * This code is licenced under the Simplified BSD License.
  * See the LICENSE file for details.
  *
- * Compiling: gcc -ansi -pedantic -Wall -O2 -o subarray subarray.c
+ * Compiling: gcc -ansi -pedantic -Wall -W -O2 -o subarray subarray.c
  *
  * Running:
  *     O(n^2) algorithm:
@@ -39,7 +39,7 @@ struct sub_array {
  */
 long sum_array(long *array, unsigned int length)
 {
-	long sum = 0; int i;
+	long sum = 0; unsigned int i;
 	for (i=0;i<length;i++) sum += array[i];
 	return sum;
 }
@@ -141,13 +141,13 @@ int main(int argc, char *argv[])
 	if (argc < 3) usage(argv[0]);
 
 	/* Allocate our array */
-	if (!(array = calloc(argc - 1, sizeof(long)))) {
+	if (!(array = calloc((unsigned int)(argc - 1), sizeof(long)))) {
 		fprintf(stderr, "Out of memory!\n");
 		exit(EXIT_FAILURE);
 	}
 
 	/* Read the array from the command line arguments */
-	while (i < argc) {
+	while (i < (unsigned int)argc) {
 		array[i-1] = atol((const char *)argv[i]);
 		i++;
 	}

@@ -11,6 +11,7 @@ The examples are written in 'ANSI' C (C89), and designed to be compiled
 with any compatible compiler. Makefiles are provided for convenience.
 Simply invoke the almighty ``make`` to build all examples.
 
+For Borland C 3.x, see Makefile.bcc.
 For Turbo C / QuickC, see Makefile.tcc / Makefile.qc, respectively.
 For SCO OpenServer, see Makefile.sco.
 
@@ -32,6 +33,7 @@ compilers/OSses.
 | GCC 4.7.3              | glibc 2.15  | Linux    | x86-64  |    0     |   0    |
 | GCC 4.6.1              | eglibc 2.13 | Linux    | x86-64  |    0     |   0    |
 | GCC 2.96               | glibc 2.2.4 | Linux    | x86-32  |    0     |   0    |
+| Borland C 3.1          | (bundled)   | Dosbox   | x86-16  |    0     |   0    |
 | Borland Turbo C 2.0    | (bundled)   | Dosbox   | x86-16  |    0     |   0    |
 | Microsoft QuickC 2.00  | (bundled)   | Dosbox   | x86-16  |    0     |   0    |
 | SCO Dev. System 5.2.0A | libc 5.2.0A | SCO Unix | x86-32  |    0     |   0    |

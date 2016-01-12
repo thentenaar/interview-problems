@@ -5,7 +5,7 @@
  * This code is licenced under the Simplified BSD License.
  * See the LICENSE file for details.
  *
- * Compiling: gcc -ansi -pedantic -Wall -O2 -o strrev strrev.c
+ * Compiling: gcc -ansi -pedantic -Wall -W -O2 -o strrev strrev.c
  * Defines:
  *     USE_C: Use the C variant of strrev (default for non-x86 arches.)
  *

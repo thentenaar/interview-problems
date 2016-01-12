@@ -5,7 +5,7 @@
  * This code is licenced under the Simplified BSD License.
  * See the LICENSE file for details.
  *
- * Compiling: gcc -ansi -pedantic -Wall -O2 -o 8queens 8queens.c
+ * Compiling: gcc -ansi -pedantic -Wall -W -O2 -o 8queens 8queens.c
  *
  * Running:
  *     tim@cid ~ $ ./8queens 1
@@ -44,7 +44,7 @@ int  n_solutions;
 /**
  * Add the candidate solution to the list of accepted solutions.
  */
-void add_solution()
+void add_solution(void)
 {
 	if (!(solutions = realloc(solutions, (n_solutions + 2) * 8))) {
 		fprintf(stderr, "ERROR: Out of memory!\n");
@@ -125,12 +125,13 @@ void print_solution(int s)
 void solve(int n, int row, char cols, char ldg, char rdg)
 {
 	unsigned char pos, possible;
+	unsigned int x = (unsigned int)(cols | ldg | rdg) & 0xff;
 
 	/* Do we have a complete solution? */
 	if (!n || row > 7) {
 		add_solution();
 		return;
-	} else if ((cols | ldg | rdg) == 0xff) {
+	} else if (x == 0xff) {
 		/* Dead end. */
 		return;
 	}

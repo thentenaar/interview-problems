@@ -5,7 +5,7 @@
  * This code is licenced under the Simplified BSD License.
  * See the LICENSE file for details.
  *
- * Compiling: gcc -ansi -pedantic -Wall -O2 -o atoi atoi.c
+ * Compiling: gcc -ansi -pedantic -Wall -W -O2 -o atoi atoi.c
  *
  * Running:
  *     tim@cid ~ $ ./atoi abcdef
