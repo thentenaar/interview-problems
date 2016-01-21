@@ -1,7 +1,7 @@
 
 RM      = rm -f
 CC      = gcc
-CFLAGS  = -ansi -pedantic -Wall -O2
+CFLAGS  = -ansi -pedantic -Wall -Werror -W -O2
 OBJS    = $(subst src,bin,$(wildcard src/*.c))
 
 all: $(OBJS)
