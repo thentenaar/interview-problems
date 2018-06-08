@@ -64,9 +64,9 @@ char *strrev(char *str)
 		"dec rdi\n\t"
 		/* Increment rsi */
 		"inc rsi\n\t"
-		/* When they're equal, there are no bytes left to swap */
+		/* When rsi >= rdi, there are no bytes left to swap */
 		"cmp rsi,rdi\n\t"
-		"jne $-15\n\t"
+		"jcs $-15\n\t"
 		".att_syntax\n\t"
 		: /* No outputs */
 		: "S"(str), "D"(str + strlen(str) - 1)
@@ -85,9 +85,9 @@ char *strrev(char *str)
 		"dec edi\n\t"
 		/* Increment esi */
 		"inc esi\n\t"
-		/* When they're equal, there are no bytes left to swap */
+		/* When esi >= edi, there are no bytes left to swap */
 		"cmp esi,edi\n\t"
-		"jne $-10\n\t"
+		"jcs $-10\n\t"
 		".att_syntax\n\t"
 		: /* No outputs */
 		: "S"(str), "D"(str + strlen(str) - 1)
@@ -96,7 +96,7 @@ char *strrev(char *str)
 	#else /* USE_C */
 	char *start = str;
 	char *end   = str + strlen(str) - 1;
-	while (start != end) {
+	while (start < end) {
 		*start ^= *end;
 		*end   ^= *start;
 		*start ^= *end;
