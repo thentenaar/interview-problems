@@ -377,7 +377,8 @@ struct stack *infix_to_postfix(char *expression)
 		 *
 		 * First, skip any whitespace.
 		 */
-		while (isspace(*expr)) expr++; expr_start = expr;
+		while (isspace(*expr)) expr++;
+		expr_start = expr;
 
 		/**
 		 * Look for numbers, and push them onto the
