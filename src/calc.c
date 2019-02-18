@@ -484,12 +484,12 @@ long solve_postfix(struct stack *pf_stack)
 
 	/**
 	 * At this point, the only thing on the stack should be our
-	 * result. If we have anything left on the either stack, this
+	 * result. If we have anything left on the stack, this
 	 * expression isn't properly balanced.
 	 */
 	result = stack_pop(pf_stack);
 
-	if (pf_stack->pos > 0 || pf_stack->pos > 0) {
+	if (pf_stack->pos > 0) {
 		ERROR_1("solve_postfix: %d unsolved items remain.\n",
 		        pf_stack->pos);
 	}
