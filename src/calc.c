@@ -144,7 +144,8 @@ struct op {
 	long (*eval)(char op, long a, long b);
 };
 
-struct op operators[] = {
+#define N_OPERATORS 12
+struct op operators[N_OPERATORS] = {
 	{ 'p', 4 | OP_ASSOC_RIGHT | OP_UNARY, eval_simple_op },
 	{ 'n', 4 | OP_ASSOC_RIGHT | OP_UNARY, eval_simple_op },
 	{ '^', 3 | OP_ASSOC_RIGHT,            eval_exponent  },
@@ -169,7 +170,7 @@ struct op operators[] = {
 struct op *get_operator(char c)
 {
 	unsigned int i;
-	for (i=0;i<sizeof(operators)/sizeof(operators[0]);i++)
+	for (i=0;i<N_OPERATORS;i++)
 		if (c == operators[i].op) return &operators[i];
 	return NULL;
 }
